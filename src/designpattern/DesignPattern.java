@@ -6,6 +6,8 @@
 package designpattern;
 
 import designpattern.Command.*;
+import designpattern.FlyWeight.HevyObject;
+import designpattern.FlyWeight.LightObject;
 import java.awt.event.KeyEvent;
 
 /**
@@ -17,7 +19,8 @@ public class DesignPattern {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        CommandPattern();
+        //CommandPattern();
+        FlyWeightPattern();
     }
     
     public static void CommandPattern(){
@@ -26,6 +29,22 @@ public class DesignPattern {
             Command cmd = inputHandler.HandleInput();
             cmd.Execute();
         }
+    }
+    
+    public static void FlyWeightPattern(){
+        long start = System.currentTimeMillis();
+        for(int i = 0; i < 10000; i++){
+            new HevyObject();
+        }
+        long hevyTime = System.currentTimeMillis() - start;
+        start = System.currentTimeMillis();
+        for(int i = 0; i < 10000; i++){
+            new LightObject();
+        }
+        long lightTime = System.currentTimeMillis() - start;
+        
+        System.out.println("Not use FlyWeight Pattern : " + hevyTime);
+        System.out.println("Use FlyWeight Pattern     : " + lightTime);
     }
     
 }
