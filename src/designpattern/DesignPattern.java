@@ -20,13 +20,16 @@ public class DesignPattern {
     public static void main(String[] args) {
         // TODO code application logic here
         //CommandPattern();
-        FlyWeightPattern();
+        //FlyWeightPattern();
     }
     
     public static void CommandPattern(){
         InputHandler inputHandler = new InputHandler(new HelloCommand(), new ExitCommand(), new NullCommand(), new MorningCommand());
         while(true){
             Command cmd = inputHandler.HandleInput();
+            if(cmd == null){
+                continue;
+            }
             cmd.Execute();
         }
     }

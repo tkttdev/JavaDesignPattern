@@ -18,7 +18,6 @@ public class InputHandler {
     private Command buttonS;
     private Command buttonD;
     private Command buttonW;
-    private Command nullCmd = new NullCommand();
     
     public InputHandler(Command buttonA, Command buttonS, Command buttonD, Command buttonW){
         this.buttonA = buttonA;
@@ -40,7 +39,7 @@ public class InputHandler {
             return buttonW;
         }
         System.out.println("null");
-        return nullCmd;
+        return null;
     }
     
     
