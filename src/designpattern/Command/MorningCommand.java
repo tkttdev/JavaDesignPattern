@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package designpattern;
+package designpattern.Command;
 
 /**
  *
  * @author tatsu
  */
-public class Command {
-    
+public class MorningCommand  extends  Command{
+    public void Execute(){
+        System.out.println("Good Morning!");
+    }
 }
