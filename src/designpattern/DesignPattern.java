@@ -50,4 +50,7 @@ public class DesignPattern {
         System.out.println("Use FlyWeight Pattern     : " + lightTime);
     }
     
+    public static void ObserverPattern(){
+        
+    }
 }
